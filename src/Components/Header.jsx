@@ -1,4 +1,12 @@
 import React from 'react'
+import {Link as LinkRouter} from 'react-router-dom'
+
+const Link = [
+    {title:'home', to:'/'},
+    {title:'cities', to:'/cities'},
+    
+
+]
 
 const Header = () => {
     return (
@@ -11,8 +19,8 @@ const Header = () => {
                 </div>
                 <div>
                     <div >
-                        <a className="m-2 font-bold text-lg" href="">Home</a>
-                        <a className="m-2 font-bold text-lg" href="">Cities</a>
+                        <a className="m-2 font-bold text-lg" href="/">Home</a>
+                        <a className="m-2 font-bold text-lg" href="/cities">Cities</a>
                     </div>
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

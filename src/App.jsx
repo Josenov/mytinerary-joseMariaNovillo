@@ -1,7 +1,6 @@
 import './App.css'
-import Carousel from './Components/Carousel'
-import Layout from './Layouts/Layout'
-import Welcome from './Pages/Welcome'
+import { RouterProvider } from 'react-router-dom'
+import router from './router/router'
 
 
 
@@ -9,12 +8,7 @@ function App() {
 
 
   return (
-    <>
-      <Layout>
-        <Welcome />
-        <Carousel />      
-      </Layout>
-    </>
+      <RouterProvider router={router}/>
   )
 }
 
