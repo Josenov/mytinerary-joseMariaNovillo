@@ -6,7 +6,7 @@ const Header = () => {
             <div className="navbar bg-base-100">
                 <div className="flex-1">
                     <img src="./public/logotravel.png" className='w-16 h-16' alt="" />  
-                    <a className="font-bold text-lg">MyTinerary</a>
+                    <a className="font-bold text-2xl">MyTinerary</a>
     
                 </div>
                 <div>
