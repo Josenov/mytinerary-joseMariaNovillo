@@ -9,7 +9,6 @@ const Welcome = () => {
         <>
                 <main className='welcome min-h-screen'>
             <HeroCallToAction />
-            
         </main>
         <div>
             <Carousel />

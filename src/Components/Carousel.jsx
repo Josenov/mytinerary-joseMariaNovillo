@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import '../styles/carousel.css'
 
+
 const Carousel = () => {
 
   const imgCities = [{
@@ -122,9 +123,10 @@ const Carousel = () => {
         <div className='card-container text-center flex justify-center '>
         <h2 className='title text-center text-bold  mb-2 w-3/4 md:w-full'>Popular MyTineraries</h2>
         </div>
-        <div className='flex justify-center min-h-[50vh] max-w-full'>
+        
+        <div className='flex justify-center min-h-[50vh] max-w-full '>
           <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l h-20 mt-[50vh] m-1 sm:mt-[50vh]" onClick={prevClick}>❮</button>
-          <div className=' h-[100vh] w-5/6 grid  sm:grid-rows-2 grid-cols-1 sm:grid-cols-2 md:gap-4 mb-3 mt-2'>
+          <div className=' h-[100vh] w-5/6 grid  sm:grid-rows-2 grid-cols-1 sm:grid-cols-2 md:gap-4 mb-3 mt-2 sm:gap-1'>
             {cardsPerPage.map((i) => (
               <a key={i} className='relative rounded-xl  border-2 border-double  '>
                 <img
