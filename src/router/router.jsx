@@ -3,6 +3,7 @@ import Home from "../Pages/Welcome";
 import Cities from "../Pages/Cities";
 import Carousel from "../Components/Carousel";
 import Layout from "../Layouts/Layout";
+import CityDetails from "../Pages/CityDetails";
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,12 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element: <Home />,
+                
+            },
+
+            {
+                path:'/cities/:id',
+                element: <CityDetails />,
                 
             },
         ]
