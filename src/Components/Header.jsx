@@ -8,7 +8,7 @@ const Header = () => {
             <div className="navbar bg-base-100">
                 <div className="flex-1">
                     <img src="./public/logotravel.png" className='w-16 h-16' alt="" />  
-                    <a className="font-bold text-2xl">MyTinerary</a>
+                    <LinkRouter to='/' className="font-bold text-2xl">MyTinerary</LinkRouter>
     
                 </div>
                 <div>
