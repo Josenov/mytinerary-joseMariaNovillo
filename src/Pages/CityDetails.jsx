@@ -28,7 +28,7 @@ const CityDetails = () => {
             <div className='flex flex-col justify-center items-center'>
                 <h2 className='text-5xl font-bold justify-center items-center text-center'>{cities?.city}</h2>
                 <h3 className='text-xl font-bold justify-center items-center text-center m-4'>{cities?.country}</h3>
-                <img className='w-128 flex justify-center items-center align-center' src={cities?.url} alt="" />
+                <img className='w-1/2 flex justify-center items-center align-center m-4' src={cities?.url} alt="" />
             </div>
 
 
