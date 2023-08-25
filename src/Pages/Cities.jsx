@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import {Link as LinkRouter} from 'react-router-dom'
 
@@ -6,19 +6,31 @@ const Cities = () => {
 
   const [cities, setCities] = useState();
 
+  let inputSearch = useRef();
+
   useEffect(() => {
     axios.get('http://localhost:7000/api/cities?city=')
       .then(response => setCities(response.data.cities))
       .catch(err => console.log(err))
   }, []);
 
-  const handleInputChange = async (event) => {
+  const handleSearch = async (event) => {
+    console.log()
+
+    const name = inputSearch.current.value;
 
     try {
-      const response = await axios.get(`http://localhost:7000/api/cities?city=${event.target.value}`)
+      const response = await axios.get(`http://localhost:7000/api/cities?city=${name}`)
       setCities(response.data.cities)
     } catch (error) {
-      console.log(error)
+      if(error.response.status === 404){
+        setCities([]);
+
+      } else {
+        console.log(error)
+
+      }
+      
     }
 
 
@@ -31,13 +43,14 @@ const Cities = () => {
         <h1 className="text-7xl font-bold text-black text-center flex justify-center">Cities</h1>
         <h2 className="text-2xl font-bold text-blue-400 text-center flex justify-center">Collection of the most beautiful places and experience!</h2>
       </div>
-      <div className='flex justify-center items-center'>
-        <input onChange={handleInputChange} type="text" placeholder="Search your city here" className="input input-bordered input-primary w-full max-w-xs m-6 p-3" />
+      <div className='flex justify-center items-center'>  
+        <input ref={inputSearch} type="text" placeholder="Search your city here" className="input input-bordered input-primary w-full max-w-xs m-6 p-3" />
+        <button onClick={handleSearch} className="btn btn-outline btn-primary">Search</button>  
       </div>
       <div className='flex flex-wrap items-center justify-center'>
         {
-
-          cities?.map((city) => {
+          cities.length > 0
+          ? cities?.map((city) => {
             return (
               <div  className="card card-compact w-96 h-96 bg-base-100 shadow-xl m-4">
                 <figure><img src={city.url} alt={city.city} /></figure>
@@ -53,7 +66,8 @@ const Cities = () => {
               </div>
             )
           })
-        }
+          : <h2 className="text-2xl font-bold text-blue-400 text-center flex justify-center m-4">The city that you are looking for was not found! Try again</h2>
+          } 
       </div>
 
     </>
