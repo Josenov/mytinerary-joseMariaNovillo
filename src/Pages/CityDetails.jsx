@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import UnderConstructionPage from '../Components/UnderConstructionPage'
 import { Link as LinkRouter } from 'react-router-dom'
+import ItineraryCard from '../Components/ItineraryCard'
 
 const CityDetails = () => {
 
@@ -32,7 +33,7 @@ const CityDetails = () => {
             </div>
 
 
-            <UnderConstructionPage />
+            <ItineraryCard/>
 
 
         </>
