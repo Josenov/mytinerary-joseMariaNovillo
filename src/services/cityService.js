@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const citiesQueries = axios.create( {
-    baseURL: 'http://localhost:7000/api/cities?city=',
+    baseURL: 'http://localhost:7000/api/cities',
 } )
 
 export const getAllCities = async (queryParams="") => {

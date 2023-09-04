@@ -1,27 +1,38 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import axios from 'axios'
 import {Link as LinkRouter} from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux';
 import { getAllCities } from '../services/cityService';
-import { loadCities, filterCities } from '../store/actions/citiesActions';
+import { filterCities, loadCitiesAsync } from '../store/actions/citiesActions';
 
 const Cities = () => {
 
   /* const [cities, setCities] = useState(); */
 
-  let inputSearch = useRef(null);
+  let inputSearch = useRef();
+
+  console.log(inputSearch)
+
+
 
   const citiesStore = useSelector(store => store.cities)
   console.log('store: ', citiesStore)
+
+  
 
   const dispatch = useDispatch()
 
   useEffect(() => {
 
-    getAllCities().then((cities) => { 
-      /* setCities(cities); */
+    dispatch (loadCitiesAsync());
+    /* getAllCities().then((cities) => { 
+      setCities(cities);  
     dispatch (loadCities(cities));
-    });
+    }); */
+    /* getAllCities().then((cities) => { 
+      setCities(cities);
+    ;
+    }); */
 
   }, [])
   
@@ -38,7 +49,6 @@ const Cities = () => {
 
   const handleSearch = async (event) => {
     
-
     const searchCity = inputSearch.current.value.trim();
 
     /* console.log(searchCity)
@@ -46,9 +56,7 @@ const Cities = () => {
     citiesStore.allCities.filter(city =>city.name.toLowerCase().includes(searchCity.toLowerCase())) */
 
     dispatch(filterCities(searchCity))
-
-
-
+    
     /* try {
       const response = await axios.get(`http://localhost:7000/api/cities?city=${name}`)
       setCities(response.data.cities)
@@ -76,8 +84,8 @@ const Cities = () => {
       </div>
       <div  className='flex flex-wrap items-center justify-center'>
         {
-          citiesStore.filteredCities.length > 0 ?
-          citiesStore.filteredCities.map((city) => {
+          citiesStore.filteredCities?.length > 0 ?
+          citiesStore.filteredCities?.map((city) => {
             return (
               <div className="card card-compact w-96 h-96 bg-base-100 shadow-xl m-4">
                 <figure><img src={city.url} alt={city.city} /></figure>
