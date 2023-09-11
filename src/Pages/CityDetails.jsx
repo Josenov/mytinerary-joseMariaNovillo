@@ -14,7 +14,7 @@ const CityDetails = () => {
 
     const dispatch = useDispatch()
     const city = useSelector(store => store.cities.city)
-    console.log(city)
+    //console.log(city)
 
     //axios (`http://localhost:7000/api/cities/${id}`) .then (response => console.log(response))
 

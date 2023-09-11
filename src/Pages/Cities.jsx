@@ -9,14 +9,14 @@ const Cities = () => {
 
   /* const [cities, setCities] = useState(); */
 
-  let inputSearch = useRef();
+  let inputSearch = useRef(null);
 
-  console.log(inputSearch)
+  //console.log(inputSearch)
 
 
 
   const citiesStore = useSelector(store => store.cities)
-  console.log('store: ', citiesStore)
+  //console.log('store: ', citiesStore)
 
   
 
@@ -82,7 +82,7 @@ const Cities = () => {
         <input ref={inputSearch} type="text" placeholder="Search your city here" className="input input-bordered input-primary w-full max-w-xs m-6 p-3" />
         <button onClick={handleSearch} className="btn btn-outline btn-primary">Search</button>  
       </div>
-      <div  className='flex flex-wrap items-center justify-center'>
+      <div className='flex flex-wrap items-center justify-center'>
         {
           citiesStore.filteredCities?.length > 0 ?
           citiesStore.filteredCities?.map((city) => {
@@ -90,7 +90,7 @@ const Cities = () => {
               <div className="card card-compact w-96 h-96 bg-base-100 shadow-xl m-4">
                 <figure><img src={city.url} alt={city.city} /></figure>
                 <div className="card-body">
-                  <h2 className="card-title text-4xl font-bold">{city.city}<svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />  <circle cx="12" cy="10" r="3" /></svg></h2>
+                  <h2 className="card-title text-4xl font-bold">{city.city}<svg className="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />  <circle cx="12" cy="10" r="3" /></svg></h2>
                   <p className='text-2xl font-semibold'>{city.country}</p>
                   <div className="card-actions justify-end">
                     <LinkRouter key={city._id} to={`/cities/${city._id}`}>
