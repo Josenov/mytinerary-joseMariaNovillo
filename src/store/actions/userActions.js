@@ -13,7 +13,7 @@ export const userLogin = createAsyncThunk ('userLogin', async (obj) =>{
 
         const {data} = await axios.post('http://localhost:7000/api/auth/signin', obj.data)
             console.log(data)
-            localStorage.setItem('token', JSON.stringify(data.response.token))
+            localStorage.setItem('token',(data.response.token))
             localStorage.setItem('user', JSON.stringify(data.response.user))
 
         return {
@@ -29,4 +29,29 @@ export const userLogin = createAsyncThunk ('userLogin', async (obj) =>{
         }
     }
     
+})
+
+
+
+    
+
+
+export const userToken = createAction('userToken', (user) =>{
+    return {
+        payload:{
+            user
+        }
+    }
+
+})
+
+export const userSignOut = createAction('reset', ()=>{
+
+    localStorage.removeItem('token')
+    
+    return {
+        payload:{
+            payload:null
+        }
+    }
 })
