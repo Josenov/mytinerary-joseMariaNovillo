@@ -3,12 +3,13 @@ import { Link as LinkRouter } from 'react-router-dom'
 import { userLogin } from '../store/actions/userActions'
 import { useDispatch, useSelector } from 'react-redux'
 import GoogleButton from '../Components/GoogleButton'
+import Swal from 'sweetalert2'
 
 
 
 const LogInForm = () => {
 
-    const store = useSelector(store=>store.user)
+    const store = useSelector(store=>store.user.user)
     console.log(store)
 
     const [formData, setFormData] = useState({

@@ -17,7 +17,7 @@ function App() {
     let url = `http://localhost:7000/api/auth/token`
     let token = localStorage.getItem('token')
 
-    console.log(token)
+   // console.log(token)
 
     if (token){
       let configs = {headers:{'Authorization':`Bearer ${token}`}}

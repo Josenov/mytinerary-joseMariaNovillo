@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { userLogin, userPhoto, userToken, userSignOut } from "../actions/userActions.js";
+import { userLogin, userPhoto, userToken, userSignOut, userLoginGoogle, userSignUp } from "../actions/userActions.js";
 
 
 
@@ -31,6 +31,28 @@ const userReducer = createReducer (initialState,
             }
 
         })
+
+        .addCase(userLoginGoogle.fulfilled,(state, action)=>{
+
+            return{
+                ...state,
+                user: action.payload.user,
+                token:action.payload.token
+            }
+
+        })
+
+        .addCase(userSignUp.fulfilled,(state, action)=>{
+
+            return{
+                ...state,
+                user: action.payload.user,
+                token:action.payload.token
+            }
+
+        })
+
+
         
         .addCase(userSignOut,(state, action)=>{
 

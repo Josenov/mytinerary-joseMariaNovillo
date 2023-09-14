@@ -5,7 +5,7 @@ import Layout from "../Layouts/Layout";
 import CityDetails from "../Pages/CityDetails";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
-import ProtectedRoute from './protectedRoute'
+import ProtectedRoute from './ProtectedRoute'
 
 
 
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/cities',
-                element:  (<ProtectedRoute path='/404'> <Cities /> </ProtectedRoute>)
+                element:   <Cities />
             },
 
             {
@@ -33,9 +33,11 @@ const router = createBrowserRouter([
 
             {
                 path:'/login',
-                element:  <Login />,
+                element:  (<ProtectedRoute path='/'> <Login /> </ProtectedRoute>),
                 
             },
+
+
 
             {
                 path:'/signup',

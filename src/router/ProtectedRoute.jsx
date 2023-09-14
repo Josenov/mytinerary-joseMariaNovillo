@@ -10,10 +10,10 @@ const protectedRoute = ({children, path}) => {
     //console.log(user)
 
     if (user) {
-        return children
-    
-    }else{
+        
         return <Navigate to={path}/>
+    }else{
+        return children
     }
 }
 
