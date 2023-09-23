@@ -7,12 +7,12 @@ import Carousel from '../Components/Carousel'
 const Welcome = () => {
     return (
         <>
-                <main className='welcome min-h-screen'>
-            <HeroCallToAction />
-        </main>
-        <div>
-            <Carousel />
-        </div>
+            <main className='welcome  flex justify-center lg:justify-end items-center'>
+                <HeroCallToAction />
+            </main>
+            <div>
+                <Carousel />
+            </div>
         </>
 
     )

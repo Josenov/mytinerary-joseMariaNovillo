@@ -11,16 +11,17 @@ import { userToken } from './store/actions/userActions'
 
 function App() {
 
-  const dispatch = useDispatch();
+  let dispatch = useDispatch();
 
   useEffect(()=>{
     let url = `http://localhost:7000/api/auth/token`
     let token = localStorage.getItem('token')
 
-   // console.log(token)
+    //console.log(token)
 
     if (token){
       let configs = {headers:{'Authorization':`Bearer ${token}`}}
+      
 
       axios.post(url, null, configs)
         .then(response => dispatch(userToken(response.data.user)))

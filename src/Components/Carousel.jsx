@@ -84,7 +84,7 @@ const Carousel = () => {
 
   {
     title: "Destination12",
-    city: "Katmandu",
+    city: "Khatmandu",
     country: "Nepal",
     url: "https://www.exoticca.com/es/blog/wp-content/uploads/2019/04/No-sabes-qu%C3%A9-ver-en-Katmand%C3%BA-Conoce-el-Nepal.jpg"
   }
@@ -111,7 +111,7 @@ const Carousel = () => {
         } else {
           setIndex(0)
         }
-      }, 7000)
+      }, 4000)
       return()=>{
         clearInterval(timeCards)
       }
@@ -121,12 +121,12 @@ const Carousel = () => {
     return (
       <>
         <div className='card-container text-center flex justify-center '>
-        <h2 className='title text-center text-bold  mb-2 w-3/4 md:w-full'>Popular MyTineraries</h2>
+        <h2 className='title text-center text-bold  mb-2 w-3/4 md:w-full text-blue-900'>Popular MyTineraries</h2>
         </div>
         
-        <div className='flex justify-center min-h-[50vh] max-w-full '>
-          <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l h-20 mt-[50vh] m-1 sm:mt-[50vh]" onClick={prevClick}>❮</button>
-          <div className=' h-[100vh] w-5/6 grid  sm:grid-rows-2 grid-cols-1 sm:grid-cols-2 md:gap-4 mb-3 mt-2 sm:gap-1'>
+        <div className='flex justify-center h-1/2 w-full gap-4' >
+          <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4  mt-[100vh] rounded-l h-20 lg:mt-[50vh] m-1" onClick={prevClick}>❮</button>
+          <div className='  w-5/6 grid  sm:grid-rows-2 grid-cols-1 sm:grid-cols-2 md:gap-4 mb-3 mt-2 sm:gap-1 gap-4'>
             {cardsPerPage.map((i) => (
               <a key={i} className='relative rounded-xl  border-2 border-double  '>
                 <img
@@ -144,7 +144,7 @@ const Carousel = () => {
               </a>
             ))}
           </div>
-          <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l h-20 mt-[50vh] m-1" onClick={nextClick}>❯</button>
+          <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 mt-[100vh]  rounded-l h-20 lg:mt-[50vh] m-1" onClick={nextClick}>❯</button>
         </div>
       </>
     )

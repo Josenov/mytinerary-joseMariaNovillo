@@ -1,7 +1,5 @@
 main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('../../public/bg-image.jpg');
+    min-height: 100vh;
+    background-image: url('https://static.toiimg.com/photo/75126202.cms');
     background-size: cover;
 }
