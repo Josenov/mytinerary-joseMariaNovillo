@@ -6,7 +6,7 @@ const HeroCallToAction = () => {
     return (
 
         <>
-            <div id='heroCard' className="bg-white bg-opacity-20 backdrop-blur-md rounded-[25px] lg:mr-32 drop-shadow-lg flex flex-col  w-[450px]">
+            <div id='heroCard' className="bg-gray-700 bg-opacity-20 backdrop-blur-md rounded-[25px] lg:mr-32 drop-shadow-lg flex flex-col  w-[450px] m-8">
                 <div className="hero-content">
                     
                     <div className='text-center flex flex-col items-center'>

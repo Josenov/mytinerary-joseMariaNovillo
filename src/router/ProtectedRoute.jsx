@@ -9,12 +9,26 @@ const protectedRoute = ({children, path}) => {
     let user = useSelector(store => store.user.user);
     //console.log(user)
 
-    if (user) {
+    if(user){
+        return <Navigate to={path}/>
+    } 
+        return children;
+
+    
+
+    /* if (user) {
         
         return <Navigate to={path}/>
-    }else{
-        return children
     }
+        return children */
+    
+    
+    
+
+
 }
+
+
+ 
 
 export default protectedRoute

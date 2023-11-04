@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/cities',
-                element:   <Cities />
+                element:  <Cities /> 
             },
 
             {
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
 
             {
                 path:'/login',
-                element:  (<ProtectedRoute path='/'> <Login /> </ProtectedRoute>),
+                element:     (<ProtectedRoute path='/'> <Login /> </ProtectedRoute>)
                 
             },
 

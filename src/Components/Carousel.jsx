@@ -125,7 +125,7 @@ const Carousel = () => {
         </div>
         
         <div className='flex justify-center h-1/2 w-full gap-4' >
-          <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4  mt-[100vh] rounded-l h-20 lg:mt-[50vh] m-1" onClick={prevClick}>❮</button>
+          <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4  mt-[50vh] rounded-l h-20 lg:mt-[50vh] m-1" onClick={prevClick}>❮</button>
           <div className='  w-5/6 grid  sm:grid-rows-2 grid-cols-1 sm:grid-cols-2 md:gap-4 mb-3 mt-2 sm:gap-1 gap-4'>
             {cardsPerPage.map((i) => (
               <a key={i} className='relative rounded-xl  border-2 border-double  '>
@@ -133,7 +133,7 @@ const Carousel = () => {
                   className='absolute rounded-xl object-cover object-center h-full w-full'
                   src={imgCities[index + i].url}
                 />
-                <div className='city relative p-10 sm:p-6 lg:p-8  rounded-xl'>
+                <div className='city relative p-10 sm:p-6 lg:p-8  rounded-xl text-xl lg:text-3xl'>
                   <p>
                     {imgCities[index + i].city}
                   </p>
@@ -144,7 +144,7 @@ const Carousel = () => {
               </a>
             ))}
           </div>
-          <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 mt-[100vh]  rounded-l h-20 lg:mt-[50vh] m-1" onClick={nextClick}>❯</button>
+          <button className="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 mt-[50vh]  rounded-l h-20 lg:mt-[50vh] m-1" onClick={nextClick}>❯</button>
         </div>
       </>
     )

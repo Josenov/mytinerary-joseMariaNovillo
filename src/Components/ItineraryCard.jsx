@@ -68,9 +68,9 @@ const ItineraryCard = () => {
     return (
         <>
             <div className='flex justify-center items-center'>
-                <div className="card w-1/3 glass bg-gray-300 m-4 sm:w-1/2">
+                <div className="card w-64 glass bg-gray-300 m-4 sm:w-1/2 text-center">
                     <h1 className='text-4xl font-bold text-center m-4'>Itineraries</h1>
-                    <figure><img className='rounded-full h-32 w-32 border-solid border-4 border-green-400 bg-cover bg-center ' src={itineraryStore[0]?itineraryStore[0]?.user.image:defaultImage} alt="user" /></figure>
+                    <figure><img className='rounded-full h-32 w-32 border-solid border-4 border-green-400 bg-cover bg-center ' src={itineraryStore[0]?itineraryStore[0]?.user?.image:defaultImage} alt="user" /></figure>
                     <div className="card-body flex justify-center align-center items-center">
                         <h2 className="card-title text-2xl font-bold">{itineraryStore[0]?.user.name}</h2>
                         <p className='font-bold flex items-center gap-2'>Price:<span className='flex flex-row gap-1'>{priceArray}</span></p>
